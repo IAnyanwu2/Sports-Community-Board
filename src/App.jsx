@@ -1,6 +1,11 @@
 import { useState } from 'react'
-import './App.css'
 import SportsPage from './components/sportspage'
+// import TeamSearch from './components/searchteam'
+import NewsSearch from './components/searchnews'
+import './components/sportspage.css'
+import './App.css'
+
+
 
 function App() {
 
@@ -11,9 +16,9 @@ function App() {
   return (
     <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
       
-      <button className='toggle-dark' onClick={() => setDarkMode(!darkMode)}>
+      {/* <button className='toggle-dark' onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? '☀️ Light Mode': '🌙 Dark Mode'}
-      </button>
+      </button> */}
 
       <h1>
         Welcome all Sports Fans!!
@@ -38,6 +43,8 @@ function App() {
       
 
       <SportsPage/>
+      {/* <TeamSearch/> */}
+      <NewsSearch/>
 
     
     </div>

@@ -1,47 +1,57 @@
- Web Development Project 1 - Sports Page
+# Web Development Project 5 - *Sports Community Board*
 
-Submitted by: Ikechukwu Anyanwu
+Submitted by: **Ikechukwu Anyanwu**
 
-This web app: Provides a community board filled with updates on a myriad of sporting events
+This web app: **Displays information about different collections of sports including news and current events about each sport**
 
-Time spent: 6 hours spent in total
+Time spent: **6** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x ] **There is a unique theme for events or resources relevant to a specific community**
-- [ x] **At least 10 unique resources or events are displayed in a responsive card format**
+- [x ] **The site has a dashboard displaying a list of data fetched using an API call**
+  - The dashboard should display at least 10 unique items, one per row
+  - The dashboard includes at least two features in each row
+- [x ] **`useEffect` React hook and `async`/`await` are used**
+- [ ] **The app dashboard includes at least three summary statistics about the data** 
+  - The app dashboard includes at least three summary statistics about the data, such as:
+    - *insert details here*
+- [x ] **A search bar allows the user to search for an item in the fetched data**
+  - The search bar **correctly** filters items in the list, only displaying items matching the search query
+  - The list of results dynamically updates as the user types into the search bar
+- [ x] **An additional filter allows the user to restrict displayed items by specified categories**
+  - The filter restricts items in the list using a **different attribute** than the search bar 
+  - The filter **correctly** filters items in the list, only displaying items matching the filter attribute in the dashboard
+  - The dashboard list dynamically updates as the user adjusts the filter
 
 The following **optional** features are implemented:
 
-- [ ] Buttons or links to a related resources are on each card component
-- [ ] The site is responsive for both desktop and mobile formats
+- [x ] Multiple filters can be applied simultaneously
+- [ x] Filters use different input types
+  - e.g., as a text input, a dropdown or radio selection, and/or a slider
+- [ ] The user can enter specific bounds for filter values
 
 The following **additional** features are implemented:
 
-* Search Bar so users can filter for a specific sport
-* Light and Dark mode depending on user preference
-
-
+* [ ] List anything else that you added to improve the site's functionality!
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+Here's a walkthrough of implemented user stories:
 
-<img src='P1_wlkthrgh.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='P5_wlkthrgh.gif' title='Video Walkthrough'/>
 
-
-GIF created with LICEcap 
+GIF created with LICEcap  
 
 
 ## Notes
 
-The project of building a community page was quite fun. I did not experience too many hiccups, aside from setting up the folders in the correct manner as well as the repository, everything else went smoothly.
+Retrieving and making the correct api calls was a bit of an issue, it was nonetheless resolved.
 
 ## License
 
-    Copyright 2025 Ikechukwu Anyanwu
+    Copyright [2025] [Ikechukwu Anyanwu]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

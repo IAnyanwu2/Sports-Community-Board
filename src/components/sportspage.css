@@ -62,12 +62,11 @@
     font-size: 16px;
 }
 
-.dark-mode {
+/* .dark-mode {
     background-color: #040b30;
     color: white;
     min-height: 100%;
     min-width: 100%;
-   
 }
 
 .toggle-dark {
@@ -84,7 +83,58 @@
 .toggle-dark:hover {
     background-color: #0c1549;
 
+} */
+
+/* .team-search-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
 }
 
+.team-search-section .search-bar {
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+
+.team-card {
+  margin-top: 1rem;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.team-card img.badge {
+  height: 60px;
+  margin-top: 0.5rem;
+} */
+
+.news-article {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 4px solid #28a745;
+    background: #f9f9f9;
+    border-radius: 8px;
+  }
+
+.news-article h4 {
+    margin: 0;
+    color: #007bff;
+  }
+
+.news-article p {
+    margin: 0.3rem 0;
+  }
+
+
+
+/* img.badge {
+    width: 100px;
+    height: auto;
+} */
+
+.news-image {
+    max-width: 100%;
+    height: auto;
+  }
 
 

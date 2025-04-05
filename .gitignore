@@ -31,3 +31,5 @@ OneDrive/
 *.log
 *.bak
 *.swp
+
+.env
