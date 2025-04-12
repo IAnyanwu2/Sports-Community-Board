@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const NewsSearch = () => {
-  const [term, setTerm] = useState('');
+const NewsSearch = ({ selectedSport }) => {
+  const [term, setTerm] = useState(selectedSport || ''); // Initialize search term with selected sport
   const [articles, setArticles] = useState([]);
   const [filteredArticles, setFilteredArticles] = useState([]);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ const NewsSearch = () => {
 
   const API_KEY = '5443f1c2ba3dd6c8ecf68c8398cd2d4f';
 
-  // Fetch news articles
+  // Fetch news articles based on term (search query)
   const fetchNews = async () => {
     setLoading(true);
     try {
@@ -72,6 +72,13 @@ const NewsSearch = () => {
 
     setFilteredArticles(filtered);
   }, [articles, categoryFilter, dateRange]);
+
+  useEffect(() => {
+    if (selectedSport) {
+      setTerm(selectedSport); // Update search term when selectedSport changes
+      fetchNews();  // Fetch news related to the selected sport
+    }
+  }, [selectedSport]);
 
   return (
     <div className="news-search">

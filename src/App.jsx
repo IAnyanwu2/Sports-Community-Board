@@ -1,57 +1,55 @@
-import { useState } from 'react'
-import SportsPage from './components/sportspage'
-// import TeamSearch from './components/searchteam'
-import NewsSearch from './components/searchnews'
-import './components/sportspage.css'
-import './App.css'
+import { useState } from 'react'; 
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import SportPage from './components/sportspage';
+import TeamSearch from './components/searchteam';
+import NewsSearch from './components/searchnews';
 
+const AppRoutes = () => {
+  const [selectedSport, setSelectedSport] = useState(null);
+  const [leagueName, setLeagueName] = useState(null);
+  const navigate = useNavigate();
 
+  const sportsLeagues = {
+    Soccer: 'English Premier League',
+    Basketball: 'NBA',
+    Baseball: 'MLB',
+    Football: 'NFL',
+    Hockey: 'NHL',
+    Volleyball: 'AVP',
+    Boxing: 'WBC',
+    Tennis: 'ATP',
+    Rugby: 'Super Rugby',
+    Swimming: 'FINA',
+    Track: 'IAAF',
+    Golf: 'PGA Tour',
+  };
 
-function App() {
-
-  const [darkMode, setDarkMode] = useState(false);
-  
-  const sportsIcons = ['🏈', '⚽', '🏀', '🏒', '🎾','🥊','🏃🏼','🏐','🏊🏼‍♂️','⚾','🏉'];
+  const handleSportClick = (sport) => {
+    setSelectedSport(sport);
+    const league = sportsLeagues[sport] || null;
+    setLeagueName(league);
+    navigate('/teams'); // Navigate to teams view
+  };
 
   return (
-    <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
-      
-      {/* <button className='toggle-dark' onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? '☀️ Light Mode': '🌙 Dark Mode'}
-      </button> */}
+    <Routes>
+      <Route path="/" element={<SportPage onSportClick={handleSportClick} />} />
+      <Route
+        path="/teams"
+        element={<TeamSearch leagueName={leagueName} />} // ✅ Clean prop name
+      />
+      <Route
+        path="/news"
+        element={<NewsSearch selectedSport={selectedSport} />}
+      />
+    </Routes>
+  );
+};
 
-      <h1>
-        Welcome all Sports Fans!!
-        <span role ='img' aria-label='cheer'>📣</span>
-      </h1>
+const App = () => (
+  <Router>
+    <AppRoutes />
+  </Router>
+);
 
-      <div className='banner'>
-        <h2>
-          
-          {sportsIcons.map((icon, index) => (
-            
-            <span key={index} role='img' aria-label={`sports-icon-${index}`}>
-              {icon}
-            </span>
-          ))}
-
-        </h2>
-      </div>
-      
-      
-      
-      
-
-      <SportsPage/>
-      {/* <TeamSearch/> */}
-      <NewsSearch/>
-
-    
-    </div>
-
-  )
-  
-
-}
-
-export default App
+export default App;
